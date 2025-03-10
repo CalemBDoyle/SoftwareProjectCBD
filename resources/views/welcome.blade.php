@@ -19,41 +19,46 @@
             </style>
         @endif
     </head>
-    <body class="bg-[#E1F5FE] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
-        <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
-            @if (Route::has('login'))
-                <nav class="flex items-center justify-end gap-4">
-                    @auth
+    <body class="bg-[#E1F5FE] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center justify-center min-h-screen flex-col">
+    <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
+        @if (Route::has('login'))
+            <nav class="flex flex-col items-center gap-4 w-full">
+                @auth
+                    <a
+                        href="{{ url('/dashboard') }}"
+                        class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal"
+                    >
+                        Dashboard
+                    </a>
+                @else
+                    <!-- Welcome Message -->
+                    <h1 class="text-2xl font-semibold mb-4 text-center">Welcome to <span class="font-bold text-[#1b1b18] dark:text-[#EDEDEC]">BottleCycle</span></h1>
+
+                    <!-- Login Button -->
+                    <a
+                        href="{{ route('login') }}"
+                        class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"
+                    >
+                        Log in
+                    </a>
+
+                    <!-- Register Button -->
+                    @if (Route::has('register'))
                         <a
-                            href="{{ url('/dashboard') }}"
+                            href="{{ route('register') }}"
                             class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal"
                         >
-                            Dashboard
+                            Register
                         </a>
-                    @else
-                        <a
-                            href="{{ route('login') }}"
-                            class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"
-                        >
-                            Log in
-                        </a>
-
-                        @if (Route::has('register'))
-                            <a
-                                href="{{ route('register') }}"
-                                class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
-                                Register
-                            </a>
-                        @endif
-                    @endauth
-                </nav>
-            @endif
-        
-
-                   
-
-        @if (Route::has('login'))
-            <div class="h-14.5 hidden lg:block"></div>
+                    @endif
+                @endauth
+            </nav>
         @endif
-    </body>
+    </header>
+
+    @if (Route::has('login'))
+        <div class="h-14.5 hidden lg:block"></div>
+    @endif
+</body>
+
 </html>
