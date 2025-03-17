@@ -11,9 +11,10 @@ class StoreController extends Controller
      * Display a listing of the resource.
      */
     public function index()
+    
     {
-        $stores = Store::all();
-        return view('stores.index');
+        $stores = Store::all(); // Fetch all stores from the database
+        return view('stores.index', compact('stores')); // Pass stores to the view
     }
 
     /**

@@ -4,14 +4,32 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
+    
+        <div class="max-w-7xl mx-auto sm:px-6 ">
+                <div class=" text-gray-900">
+                    <h1 class="text-2xl font-semibold">
+                    {{ __("Hello, " . Auth::user()->name) }}
+                    </h1>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
+                    <div class="min-h-screen flex items-center justify-center py-12">
+                    <div class="text-center">
+                        <!-- Text Above the Button -->
+                        <p class="text-lg mb-6">
+                            You have saved <span class="font-bold text-blue-600">€1.15</span> with 6 bottles
+                        </p>
+
+                        <!-- Container for Buttons -->
+                            <div class="flex justify-center space-x-4">
+                            <!-- Primary Button 1 -->
+                                <a href="#" class="inline-block py-6 px-16 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 text-lg">
+                                    Button 1
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
                 </div>
-            </div>
-        </div>
+        
     </div>
 </x-app-layout>
