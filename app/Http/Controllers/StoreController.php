@@ -36,10 +36,11 @@ class StoreController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Store $store)
-    {
-        //
-    }
+    public function show($id)
+{
+    $stores = Store::findOrFail($id);
+    return view('stores.show', compact('stores'));
+}
 
     /**
      * Show the form for editing the specified resource.

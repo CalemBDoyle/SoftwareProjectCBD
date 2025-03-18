@@ -15,7 +15,7 @@
                     <div class="text-center">
                         <!-- Text Above the Button -->
                         <p class="text-lg mb-6">
-                            You have saved <span class="font-bold text-blue-600">€1.15</span> with 6 bottles
+                            {{ __("You have saved " . Auth::user()->savings . " with " . Auth::user()->bottles_returned .  " bottles") }}
                         </p>
 
                         <!-- Container for Buttons -->

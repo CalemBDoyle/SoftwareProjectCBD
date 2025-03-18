@@ -32,13 +32,15 @@ crossorigin=""></script>
 
 var stores = @json($stores); // Pass stores to JavaScript
 
-    stores.forEach(store => {
-        if (store.lat && store.long) { // Ensure coordinates exist
-            L.marker([store.lat, store.long])
-             .addTo(map)
-             .bindPopup(`<b>${store.name}</b>`);
-        }
-    });
+stores.forEach(store => {
+    L.marker([store.lat, store.long])
+        .addTo(map)
+        .on('click', function() {
+            // Generate the URL for the 'show' route based on the store's id
+            const link = `/stores/${store.id}`; // This will generate a link like /store/1
+            window.location.href = link; // Redirect to the URL
+        });
+});
 // var marker = L.marker([52.794977, -6.160455]).addTo(map);
 // var marker = L.marker([52.793316, -6.164274]).addTo(map);
 // var marker = L.marker([52.795354, -6.163137]).addTo(map);
@@ -53,4 +55,5 @@ function onMapClick(e) {
 
 map.on('click', onMapClick);
 </script>
+</body>
 </x-app-layout>
