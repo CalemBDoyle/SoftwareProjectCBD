@@ -21,7 +21,7 @@
                         <!-- Container for Buttons -->
                             <div class="flex justify-center space-x-4">
                             <!-- Primary Button 1 -->
-                                <a href="#" class="inline-block py-6 px-16 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 text-lg">
+                                <a href="/new-page" class="inline-block py-6 px-16 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 text-lg">
                                     Button 1
                                 </a>
                             </div>
