@@ -12,4 +12,8 @@ class Store extends Model
     
     protected $fillable = ['store_name', 'status', 'rating', 'lat', 'long']; // Add fillable attributes
 
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

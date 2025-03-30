@@ -26,10 +26,27 @@ class ReviewController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
+ /**
+ * Store a newly created resource in storage.
+ */
+public function store(Request $request, Store $store)
+{
+    $request->validate([
+        'rating'  => 'required|integer|min:1|max:5',
+        'comment' => 'nullable|string|max:1000',
+    ]);
+
+    // Create the review associated with the store and user
+    $store->reviews()->create([
+        'user_id'  => auth()->id(),
+        'rating'   => $request->input('rating'),
+        'comment'  => $request->input('comment'),
+        'store_id' => $store->id
+    ]);
+
+    return redirect()->route('stores.show', $store)->with('success', 'Review added successfully.');
+}
+
 
     /**
      * Display the specified resource.

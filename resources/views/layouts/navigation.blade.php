@@ -20,6 +20,12 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l9 4v12l-9 4-9-4V6l9-4z" />
                     </svg>
                 </a>
+
+                <a href="/graph" class="flex flex-col items-center space-y-1">
+                <svg class="h-10 w-10 text-gray-800 hover:text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l9 4v12l-9 4-9-4V6l9-4z" />
+                    </svg>
+                </a>
             </div>
         </div>
     </div>

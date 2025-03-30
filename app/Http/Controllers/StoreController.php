@@ -38,6 +38,7 @@ class StoreController extends Controller
      */
     public function show(Store $store)
 {
+    $store->load('reviews.user');
     return view('stores.show', compact('store'));
 }
 
