@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Store;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
-class StoreController extends Controller
+class ReviewController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    
     {
-        $stores = Store::all(); // Fetch all stores from the database
-        return view('stores.index', compact('stores')); // Pass stores to the view
+        //
     }
 
     /**
@@ -36,15 +34,15 @@ class StoreController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Store $store)
-{
-    return view('stores.show', compact('store'));
-}
+    public function show(Review $review)
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Store $store)
+    public function edit(Review $review)
     {
         //
     }
@@ -52,7 +50,7 @@ class StoreController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Store $store)
+    public function update(Request $request, Review $review)
     {
         //
     }
@@ -60,7 +58,7 @@ class StoreController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Store $store)
+    public function destroy(Review $review)
     {
         //
     }

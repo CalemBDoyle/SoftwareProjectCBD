@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/stores', [StoreController::class, 'index'])->name('stores.index');
-    Route::get('/stores/{id}', [StoreController::class, 'show'])->name('stores.show');
+    Route::get('/stores/{store}', [StoreController::class, 'show'])->name('stores.show');
     Route::post('/add-savings', [SavingsController::class, 'addSavings'])->name('add-savings');
     // Route::post('/add-savings', [SavingsController::class, 'collectSavings'])->name('collect-savings');
 });

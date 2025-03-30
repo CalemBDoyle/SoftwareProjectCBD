@@ -6,10 +6,10 @@
     </x-slot>
 <div class="border rounded-lg shadow-md p-6  bg-[#C5EDFF] hover:shadow-lg transition duration-300 max-w-xl mx-auto">
     <!-- Example store details display -->
-<h1 class="font-bold text-5xl text-black mb-2">{{ $stores->store_name }}</h1>
+<h1 class="font-bold text-5xl text-black mb-2">{{ $store->store_name }}</h1>
 
-<h2>Status: {{ $stores->status }}</h2>
-<p>Location: {{ $stores->lat }}, {{ $stores->long }}</p>
+<h2>Status: {{ $store->status }}</h2>
+<p>Location: {{ $store->lat }}, {{ $store->long }}</p>
 <p>
 </div>
 </x-app-layout>
