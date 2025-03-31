@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Graph') }}
         </h2>
     </x-slot>
 
@@ -19,7 +19,7 @@
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],  // Months
             datasets: [{
                 label: 'Bottles Collected',
-                data: [5, 8, 12, 6, 14, 10, 9, 7, 15, 11, 18, 20],  // Number of bottles collected per month
+                data: @json([Auth::user()->jan_savings, 8, 12, 6, 14, 10, 9, 7, 15, 11, 18, 20]),  // Number of bottles collected per month
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',  // Fill color
                 borderColor: 'rgba(54, 162, 235, 1)',  // Border color
                 borderWidth: 1
