@@ -16,15 +16,28 @@
     <script>
         // Data for bottle collection per month
         const data = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],  // Months
-            datasets: [{
-                label: 'Bottles Collected',
-                data: @json([Auth::user()->jan_savings, 8, 12, 6, 14, 10, 9, 7, 15, 11, 18, 20]),  // Number of bottles collected per month
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',  // Fill color
-                borderColor: 'rgba(54, 162, 235, 1)',  // Border color
-                borderWidth: 1
-            }]
-        };
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        datasets: [{
+            label: 'Savings',
+            data: {!! json_encode([
+                Auth::user()->jan_savings, 
+                Auth::user()->feb_savings, 
+                Auth::user()->mar_savings, 
+                Auth::user()->apr_savings, 
+                Auth::user()->may_savings, 
+                Auth::user()->jun_savings, 
+                Auth::user()->jul_savings, 
+                Auth::user()->aug_savings, 
+                Auth::user()->sept_savings, 
+                Auth::user()->oct_savings, 
+                Auth::user()->nov_savings, 
+                Auth::user()->dec_savings
+            ]) !!},
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        }]
+    };
 
         // Configuration for the chart
         const config = {
@@ -46,7 +59,7 @@
                         beginAtZero: true,  // Start the y-axis at 0
                         title: {
                             display: true,
-                            text: 'Bottles Collected'
+                            text: 'Savings'
                         }
                     }
                 }

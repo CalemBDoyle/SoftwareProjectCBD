@@ -31,8 +31,34 @@ class SavingsController extends Controller
             $messages[] = "Bottle added! Total amount so far: €" . $formattedTotalAmount;
         }
 
-        // Add €0.15 to the user's current savings (last random amount)
-        $user->savings += $formattedTotalAmount;
+        $currentMonth = date('n');  // Get current month as a number (1 to 12)
+
+// Array of month names (optional for reference)
+$months = [
+    1 => 'jan_savings',
+    2 => 'feb_savings',
+    3 => 'mar_savings',
+    4 => 'apr_savings',
+    5 => 'may_savings',
+    6 => 'jun_savings',
+    7 => 'jul_savings',
+    8 => 'aug_savings',
+    9 => 'sept_savings',
+    10 => 'oct_savings',
+    11 => 'nov_savings',
+    12 => 'dec_savings',
+];
+
+// Get the current month's savings field name
+$monthlySavings = $months[$currentMonth];
+
+// Add the formatted amount to the current month's savings
+$user->$monthlySavings += $formattedTotalAmount;
+
+$user->savings += $formattedTotalAmount;
+
+// Save the changes to the database
+$user->save();
 
         // Increment the bottles returned
         $user->bottles_returned += $totalBottles;
