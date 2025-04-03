@@ -19,7 +19,7 @@ Route::get('/savings', function () {
 })->name('savings');
 
 Route::get('/graph', function () {
-    return view('graph');  // Make sure 'graph.blade.php' exists in the 'resources/views' folder
+    return view('graph');
 });
 
 Route::middleware('auth')->group(function () {
