@@ -1,10 +1,16 @@
 
 <x-app-layout>
 <x-slot name="header">
+    <div class="flex justify-between items-center">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Map') }}
         </h2>
-    </x-slot>
+        <a href="{{ route('stores.create') }}" class="bg-[#0277BD] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Create Store
+        </a>
+    </div>
+</x-slot>
+
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 <head>
