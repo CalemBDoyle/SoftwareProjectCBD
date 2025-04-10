@@ -46,14 +46,6 @@
             options: {
                 responsive: true,  // Make the chart responsive
                 maintainAspectRatio: false,  // Allow the chart to resize based on container's size
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    tooltip: {
-                        enabled: true
-                    }
-                },
                 scales: {
                     y: {
                         beginAtZero: true,  // Start the y-axis at 0

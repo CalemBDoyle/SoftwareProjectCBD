@@ -16,15 +16,20 @@
 
                 <!-- Show Map Link with SVG Icon -->
                 <a href="{{ route('stores.index') }}" class="flex flex-col items-center space-y-1">
-                    <svg class="h-10 w-10 text-gray-800 hover:text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l9 4v12l-9 4-9-4V6l9-4z" />
-                    </svg>
+                <svg class="h-10 w-10 text-gray-800 hover:text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l5-2 4 2 4-2 5 2v12l-5-2-4 2-4-2-5 2V6z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l2 1 2-1 2 1 2-1" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 13l2 1 2-1 2 1 2-1" />
+                </svg>
+
                 </a>
 
                 <a href="/graph" class="flex flex-col items-center space-y-1">
                 <svg class="h-10 w-10 text-gray-800 hover:text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l9 4v12l-9 4-9-4V6l9-4z" />
-                    </svg>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 20h16M4 4v16" />
+                    <path  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4-4 4 3 4-5 4 2" />
+                </svg>
+
                 </a>
             </div>
         </div>
