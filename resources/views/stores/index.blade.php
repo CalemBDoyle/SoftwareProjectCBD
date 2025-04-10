@@ -5,9 +5,11 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Map') }}
         </h2>
+        @if(auth()->user()->role === 'admin')
         <a href="{{ route('stores.create') }}" class="bg-[#0277BD] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Create Store
         </a>
+        @endif
     </div>
 </x-slot>
 
@@ -23,7 +25,7 @@ crossorigin=""></script>
 </head>
 <body>
 
-<div id="map" style="height: 500px;"></div> <!-- Map container -->
+<div id="map" style="height: 1130px;"></div> <!-- Map container -->
 
 <!-- Leaflet JS -->
 

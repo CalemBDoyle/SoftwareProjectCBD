@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->integer('bottles_returned')->default('0');
             $table->decimal('savings')->default('0.00');
-            $table->string('role')->default('user');
             $table->decimal('jan_savings')->default('0.00');
             $table->decimal('feb_savings')->default('0.00');
             $table->decimal('mar_savings')->default('0.00');

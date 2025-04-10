@@ -23,6 +23,9 @@ class StoreController extends Controller
      */
     public function create()
     {
+        if (auth()->user()->role !== 'admin') {
+            return redirect()->route('stores.index')->with('error', 'Access Denied');
+        }
         return view('stores.create');
     }
 

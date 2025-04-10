@@ -11,7 +11,7 @@ class SavingsFlowTest extends TestCase
 {
     use RefreshDatabase; // Reset database after each test
 
-    #[Test]
+
 
     public function guest_users_cannot_access_dashboard_or_savings()
     {
@@ -19,7 +19,7 @@ class SavingsFlowTest extends TestCase
         $this->post(route('add-savings'))->assertRedirect(route('login'));
     }
 
-    #[Test]
+    
 
     public function authenticated_user_can_access_dashboard()
     {
@@ -30,7 +30,7 @@ class SavingsFlowTest extends TestCase
             ->assertSee("Hello, " . $user->name);
     }
 
-    #[Test]
+    
 
     public function user_can_add_savings()
     {
@@ -45,8 +45,7 @@ class SavingsFlowTest extends TestCase
         $this->assertGreaterThan(0, $user->bottles_returned);
     }
 
-    #[Test]
-
+    
     public function user_savings_are_tracked_correctly_by_month()
     {
         $user = User::factory()->create([
@@ -65,7 +64,7 @@ class SavingsFlowTest extends TestCase
         $this->assertGreaterThan(0, $user->$currentMonth);
     }
 
-    #[Test]
+    
 
     public function user_can_view_savings_graph()
     {

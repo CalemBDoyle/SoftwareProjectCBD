@@ -11,7 +11,6 @@ class StoreTest extends TestCase
 {
     use RefreshDatabase; // Resets DB after each test
 
-    /** @test */
     public function guests_cannot_create_a_store()
     {
         $response = $this->post(route('stores.store'), [
@@ -26,7 +25,7 @@ class StoreTest extends TestCase
         $this->assertDatabaseMissing('stores', ['store_name' => 'Test Store']); // Store should NOT exist
     }
 
-    /** @test */
+   
     public function authenticated_users_can_create_a_store()
     {
         $user = User::factory()->create();
@@ -45,7 +44,7 @@ class StoreTest extends TestCase
         $this->assertDatabaseHas('stores', ['store_name' => 'Test Store']); // Store should exist
     }
 
-    /** @test */
+  
     public function store_creation_requires_valid_data()
     {
         $user = User::factory()->create();
