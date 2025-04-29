@@ -25,7 +25,7 @@ crossorigin=""></script>
 </head>
 <body>
 
-<div id="map" style="height: 1130px;"></div> <!-- Map container -->
+<div id="map" style="height: 650px;"></div> <!-- Map container -->
 
 <!-- Leaflet JS -->
 

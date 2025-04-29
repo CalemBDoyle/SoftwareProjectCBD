@@ -8,7 +8,7 @@
     <div class="flex items-center justify-center min-h-screen">  <!-- Centering the content vertically and horizontally -->
         <div class="w-full max-w-4xl mx-auto">
             <!-- Canvas for the chart -->
-            <canvas id="bottleChart" class="w-full h-96 sm:h-[30rem] md:h-[35rem] lg:h-[40rem] xl:h-[45rem]"></canvas>  <!-- Adjusted height -->
+            <canvas id="bottleChart" class="w-full h-96"></canvas> 
         </div>
     </div>
 
@@ -44,7 +44,7 @@
             type: 'bar',  // Chart type - bar chart
             data: data,
             options: {
-                responsive: true,  // Make the chart responsive
+          
                 maintainAspectRatio: false,  // Allow the chart to resize based on container's size
                 scales: {
                     y: {
